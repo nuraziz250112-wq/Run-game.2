@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky Runner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="game">
+
+  <div id="menu">
+    <h1>SKY RUNNER</h1>
+    <p>Кедергілерден секіріп өт!</p>
+    <button onclick="startGame()">START</button>
+  </div>
+
+  <div id="hud">
+    <span>⭐ <b id="score">0</b></span>
+    <span>🪙 <b id="coins">0</b></span>
+    <span>❤️ <b id="lives">3</b></span>
+    <button id="pauseBtn" onclick="pauseGame()">Ⅱ</button>
+  </div>
+
+  <div id="player">
+    🧑‍🚀
+  </div>
+
+  <div id="coin">🪙</div>
+
+  <div id="obstacle"></div>
+
+  <div id="gameOver">
+    <h1>GAME OVER</h1>
+    <p>Ұпай: <b id="finalScore">0</b></p>
+    <p>Монета: <b id="finalCoins">0</b></p>
+    <button onclick="startGame()">ҚАЙТА ОЙНАУ</button>
+  </div>
+
+  <div id="pauseScreen">
+    <h1>PAUSE</h1>
+    <button onclick="pauseGame()">Жалғастыру</button>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+
+</body>
+</html>
