@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #111;
+}
+
+.game {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 25%, white 0 4%, transparent 5%),
+    radial-gradient(circle at 70% 15%, white 0 3%, transparent 4%),
+    linear-gradient(#4db8ff, #b9eaff 65%, #78d35b 65%);
+}
+
+/* Күн */
+
+.game::before {
+  content: "☀️";
+  position: absolute;
+  top: 55px;
+  right: 45px;
+  font-size: 55px;
+}
+
+/* Жер */
+
+.game::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #4caf50 0px,
+      #4caf50 20px,
+      #449b48 20px,
+      #449b48 40px
+    );
+}
+
+/* MENU */
+
+#menu {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.55)
+  );
+
+  color: white;
+  text-align: center;
+}
+
+#menu h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 4px 4px #145c8a;
+}
+
+#menu p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+
+button {
+  border: none;
+  border-radius: 15px;
+  padding: 14px 35px;
+  background: #ffb300;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #c47d00;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #c47d00;
+}
+
+/* HUD */
+
+#hud {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+  font-size: 22px;
+  text-shadow: 2px 2px #333;
+}
+
+#pauseBtn {
+  padding: 8px 14px;
+  font-size: 18px;
+}
+
+/* PLAYER */
+
+#player {
+  position: absolute;
+  z-index: 10;
+
+  left: 70px;
+  bottom: 90px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 42px;
+}
+
+/* OBSTACLE */
+
+#obstacle {
+  position: absolute;
+  z-index: 9;
+
+  bottom: 90px;
+  left: 100%;
+
+  width: 45px;
+  height: 60px;
+
+  border-radius: 12px 12px 5px 5px;
+
+  background: linear-gradient(
+    90deg,
+    #5b3518,
+    #9b5b28,
+    #5b3518
+  );
+
+  box-shadow: inset 5px 0 rgba(255,255,255,.15);
+}
+
+/* COIN */
+
+#coin {
+  position: absolute;
+  z-index: 8;
+
+  bottom: 170px;
+  left: 120%;
+
+  font-size: 35px;
+}
+
+/* GAME OVER */
+
+#gameOver,
+#pauseScreen {
+  display: none;
+
+  position: absolute;
+  z-index: 60;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 85%;
+  max-width: 350px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: white;
+
+  background: rgba(15, 25, 40, .92);
+
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 25px;
+}
+
+#gameOver h1,
+#pauseScreen h1 {
+  margin-bottom: 15px;
+}
+
+#gameOver p {
+  margin: 8px;
+}
